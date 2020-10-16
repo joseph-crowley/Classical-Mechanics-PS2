@@ -47,12 +47,22 @@ Problem Set 2\\
     \begin{align*}
         S &= \int{ds}\\
         \delta S &= \int{\delta \sqrt{1+ \left( \frac{dy}{dx}\right)^2 }dx}\\
-        &= \int{\frac{\frac{dy}{dx}} {\sqrt{1+ \left( \frac{dy}{dx}\right)^2 }} \delta \frac{dy}{dx}dx.
+        &= \int{\frac{\frac{dy}{dx}} {\sqrt{1+ \left( \frac{dy}{dx}\right)^2 }} \delta \frac{dy}{dx}dx}.
     \end{align*}
-    Using the equivalence of mixed partials and integrating by parts, 
+    Using the equivalence of mixed partials and integrating by parts, with $u = \frac{\frac{dy}{dx}} {\sqrt{1+ \left( \frac{dy}{dx}\right)^2 }}$ and $dv = \frac{d}{dx}\delta y \,dx$, 
     \begin{align*}
-        
+        \delta S&= \int{\frac{\frac{dy}{dx}} {\sqrt{1+ \left( \frac{dy}{dx}\right)^2 }} \frac{d}{dx}\delta y \,dx}\\
+        &=-\int{\delta y \,\frac{d}{dx}\left( \frac{\frac{dy}{dx}} {\sqrt{1+ \left( \frac{dy}{dx}\right)^2 }}\right) dx}
     \end{align*}
+    This holds true for any $\delta y$, which implies
+    \begin{align*}
+        \frac{d}{dx}\left( \frac{\frac{dy}{dx}} {\sqrt{1+ \left( \frac{dy}{dx}\right)^2 }}\right) & = 0\\
+        \frac{\frac{dy}{dx}} {\sqrt{1+ \left( \frac{dy}{dx}\right)^2 }} &= c_1\\
+        \left(\frac{d y}{d x}\right)^{2} &= c_{1}^{2}+c_{1}^{2}\left(\frac{d y}{d x}\right)^{2}\\
+        \frac{d y}{d x}&=\sqrt{\frac{c_{1}^{2}}{1-c_{1}^{2}}}\\
+        y&=\sqrt{\frac{c_{1}^{2}}{1-c_{1}^{2}}} x+c_{2}.
+    \end{align*}
+        This is the equation of a line with slope $\sqrt{\frac{c_{1}^{2}}{1-c_{1}^{2}}}$ and intercept $c_2$.
 \end{proof}
 
 \end{document}
